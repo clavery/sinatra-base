@@ -1,0 +1,7 @@
+<% section :header do %>
+  <h1>Foobars</h1>
+<% end %>
+
+<% @foobars.each do |foobar| %>
+  <p>(<%= foobar.id %>) - <%= foobar.name %></p>
+<% end %>

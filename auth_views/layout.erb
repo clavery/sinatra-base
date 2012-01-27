@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <link rel="stylesheet" href="/public/css/bootstrap.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/public/css/main.css" type="text/css" media="screen" charset="utf-8">
+  <title>Shared Authentication</title>
+  <script src="/public/js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="/">Shared Authentication</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+
+      <div class="page-header"><% section(:header) %></div>
+
+      <div class="row">
+        <div class="span14">
+          <% if flash[:notice] %>
+            <div class="alert-message info">
+              <p><%= flash[:notice] %></p>
+            </div>
+          <% end %>
+          <% if flash[:success] %>
+            <div class="alert-message success">
+              <p><strong>Success!</strong> <%= flash[:success] %></p>
+            </div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="alert-message error">
+              <p><strong>Error!</strong> <%= flash[:error] %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span14">
+
+<%=yield%>
+
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2012 Foobar Inc./p>
+    </footer>
+  </div> <!-- /container -->
+</body>
+</html>
